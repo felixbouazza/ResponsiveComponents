@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="content">
+            <div class="logo">
+                <a href="">Félix Bouazza</a>
+            </div>
+            <ul class="menu-list">
+                <div class="icon cancel-btn">
+                    <i class="fas fa-times"></i>
+                </div>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">À propos</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Ressources</a></li>
+                <li><a href="#">Outils</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Se connecter</a></li>
+            </ul>
+            <div class="icon menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="banner"></div>
+    <div class="about">
+        <div class="content">
+            <div class="title">Responsive Navigation Bar</div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ipsam voluptates dicta adipisci! Libero suscipit officiis eveniet rem quaerat laudantium, temporibus doloremque mollitia unde excepturi. Dicta iste maxime ab animi reiciendis sit tenetur cum et dignissimos aliquam ipsam optio cupiditate quos quaerat iusto, vitae modi est veniam repudiandae quasi. Veritatis neque, culpa exercitationem sequi quos fuga. Explicabo, deserunt? Molestiae, eius perferendis. Impedit nihil accusantium at eveniet harum perferendis, corrupti consequuntur inventore fugit ratione earum, expedita suscipit quam quos. Cupiditate, quaerat.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere quaerat non magnam, ut, eligendi aut ullam temporibus, minus nulla repellat distinctio repudiandae sint! Explicabo dolorum sit nostrum corporis facere molestiae doloribus ipsam provident, nisi minima repellat odio possimus facilis iure eaque voluptatem accusamus minus officiis perferendis saepe aliquam, sequi repellendus. Odio iusto doloremque laboriosam alias voluptatem officia voluptatum voluptate optio?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente saepe in itaque similique ullam ducimus necessitatibus, quasi, quae hic temporibus sit blanditiis assumenda iste magnam vero ex culpa modi esse minus excepturi fugit mollitia earum consequuntur. Qui officia et amet, minima magnam voluptas minus, expedita hic fuga sint sit. Maxime dolor tempore dolores repellat repudiandae eum accusamus exercitationem vero consequatur.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus perspiciatis accusamus doloremque inventore laboriosam alias reprehenderit, enim at saepe placeat debitis id? Obcaecati tempore quos labore beatae ipsa amet, officiis velit omnis dignissimos libero dolore atque nam quaerat hic unde facere culpa consequuntur maxime officia asperiores laboriosam. Vel dignissimos id tempora inventore eligendi cumque aperiam asperiores! Expedita porro maiores optio!</p>
+        </div>
+    </div>
+
+    <script>
+       const navbar = document.querySelector(".navbar") 
+       const menu = document.querySelector(".menu-list") 
+       const menuBtn = document.querySelector(".menu-btn") 
+       const cancelBtn = document.querySelector(".cancel-btn") 
+       const body = document.querySelector("body") 
+
+       menuBtn.onclick = () => {
+           menu.classList.add("active")
+           menuBtn.classList.add("hide")
+           body.classList.add("disabledScroll")
+       }
+
+       cancelBtn.onclick = () => {
+           menu.classList.remove("active")
+           menuBtn.classList.remove("hide")
+           body.classList.remove("disabledScroll")
+       }
+
+       window.onscroll = () => {
+           this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky") 
+       }
+    </script>
+</body>
+</html>
